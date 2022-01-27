@@ -54,7 +54,7 @@ public class TestAds {
     private static void fetchData(Context context) {
         RequestQueue queue = Volley.newRequestQueue(context); // this = context
 
-        StringRequest getRequest = new StringRequest(Request.Method.GET, "https://adstesting.toptrendingappstudio.com/fetchtestads.php",
+           StringRequest getRequest = new StringRequest(Request.Method.GET, "https://adstesting.toptrendingappstudio.com/fetchtestads.php",
                 response -> {
                     // display response
                     Log.d("Response", response.toString());
