@@ -74,8 +74,13 @@ public class TestAds {
                     }
                 },
                 error -> {
-                    Log.d("Error.Response", error.getMessage());
-                    storeAds(context);
+                    try {
+                        Log.d("Error.Response", error.getMessage());
+                        storeAds(context);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        storeAds(context);
+                    }
                 }
         );
 
