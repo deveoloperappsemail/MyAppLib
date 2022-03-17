@@ -35,7 +35,7 @@ public class InHouseAds {
                             SharedPrefUtils.saveData(context, Constants.ADS_ICON, context.getString(R.string.base_url)+"uploads/"+jsonObject.getString("adsicon"));
                             SharedPrefUtils.saveData(context, Constants.ADS_VIDEO, context.getString(R.string.base_url)+"uploads/"+jsonObject.getString("adsvideo"));
                             SharedPrefUtils.saveData(context, Constants.IS_VIDEO, jsonObject.getBoolean("isVideo"));
-                            SharedPrefUtils.saveData(context, Constants.PACKAGE_NAME, jsonObject.getBoolean("packagename"));
+                            SharedPrefUtils.saveData(context, Constants.PACKAGE_NAME, jsonObject.getString("packagename"));
 
                         }
                     } catch (Exception e) {
