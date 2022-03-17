@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import smsbackup.smsrestore.myapplication.InHouseAds;
 import smsbackup.smsrestore.myapplication.LiveAds;
 import smsbackup.smsrestore.myapplication.TestAds;
 
@@ -15,5 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         LiveAds.getLiveAds(this, getPackageName());
         TestAds.getTestAds(this);
+
+        InHouseAds.getInHouseAds(this);
     }
 }

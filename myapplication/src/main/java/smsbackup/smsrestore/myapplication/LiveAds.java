@@ -56,12 +56,12 @@ public class LiveAds {
 
     private static void fetchData(Context context, String packageName) {
         RequestQueue queue = Volley.newRequestQueue(context); // this = context
-        StringRequest postRequest = new StringRequest(Request.Method.POST, "https://adstesting.toptrendingappstudio.com/fetchidsbypackage.php",
+        StringRequest postRequest = new StringRequest(Request.Method.POST, context.getString(R.string.base_url) + "fetchidsbypackage.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         // response
-                        Log.d("Response", response);
+                        Log.d("Response1", response);
                         try {
                             JSONArray jsonArray = new JSONArray(response);
                             for (int i = 0; i < jsonArray.length(); i++) {
@@ -83,7 +83,7 @@ public class LiveAds {
                     public void onErrorResponse(VolleyError error) {
                         // error
                         try {
-                            Log.d("Error.Response", error.getMessage());
+                            Log.d("Response1", "Error.Response" + error.getMessage());
                             storeAds(context);
                         } catch (Exception e) {
                             e.printStackTrace();

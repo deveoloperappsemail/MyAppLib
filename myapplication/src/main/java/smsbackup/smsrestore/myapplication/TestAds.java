@@ -54,10 +54,10 @@ public class TestAds {
     private static void fetchData(Context context) {
         RequestQueue queue = Volley.newRequestQueue(context); // this = context
 
-           StringRequest getRequest = new StringRequest(Request.Method.GET, "https://adstesting.toptrendingappstudio.com/fetchtestads.php",
+        StringRequest getRequest = new StringRequest(Request.Method.GET, context.getString(R.string.base_url) + "fetchtestads.php",
                 response -> {
                     // display response
-                    Log.d("Response", response.toString());
+                    Log.d("Response1", response.toString());
                     try {
                         JSONArray jsonArray = new JSONArray(response);
                         for (int i = 0; i < jsonArray.length(); i++) {
@@ -75,7 +75,7 @@ public class TestAds {
                 },
                 error -> {
                     try {
-                        Log.d("Error.Response", error.getMessage());
+                        Log.d("Response1", "Error.Response" + error.getMessage());
                         storeAds(context);
                     } catch (Exception e) {
                         e.printStackTrace();
