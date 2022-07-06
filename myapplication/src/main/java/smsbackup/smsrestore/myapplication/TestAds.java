@@ -67,6 +67,7 @@ public class TestAds {
                             SharedPrefUtils.saveData(context, Constants.BANNER, jsonObject.getString("banner"));
                             SharedPrefUtils.saveData(context, Constants.NATIVE_AD, jsonObject.getString("native"));
                             SharedPrefUtils.saveData(context, Constants.OPEN_AD, jsonObject.getString("openad"));
+                            SharedPrefUtils.saveData(context, Constants.AD_COUNTER, jsonObject.getString("intercounter"));
                         }
                     } catch (Exception e) {
                         e.printStackTrace();

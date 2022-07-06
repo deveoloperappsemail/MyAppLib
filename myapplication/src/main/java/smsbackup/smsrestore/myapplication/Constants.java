@@ -6,6 +6,7 @@ public class Constants {
     public static final String BANNER = "banner";
     public static final String OPEN_AD = "openad";
     public static final String NATIVE_AD = "nativead";
+    public static final String AD_COUNTER = "adCounter";
 
     public static final String ADS_TITLE = "adstitle";
     public static final String ADS_SUB_TEXT = "adssubtext";
