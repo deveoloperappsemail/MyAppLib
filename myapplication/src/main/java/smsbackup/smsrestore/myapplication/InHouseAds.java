@@ -12,19 +12,21 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InHouseAds {
 
     private static ArrayList<InHouseModel> modelArrayList = new ArrayList<>();
 
-    public static void getInHouseAds(Context context) {
-        getData(context);
+    public static void getInHouseAds(Context context, String packageName) {
+        getData(context, packageName);
     }
 
-    private static void getData(Context context) {
+    private static void getData(Context context, String packageName) {
         RequestQueue queue = Volley.newRequestQueue(context); // this = context
 
-        StringRequest getRequest = new StringRequest(Request.Method.GET, context.getString(R.string.base_url) + "adsinhousefetch.php",
+        StringRequest getRequest = new StringRequest(Request.Method.POST, context.getString(R.string.base_url) + "adsinhousefetch.php",
                 response -> {
                     // display response
                     Log.d("Response1", response.toString());
@@ -52,7 +54,15 @@ public class InHouseAds {
                         e.printStackTrace();
                     }
                 }
-        );
+        ){
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("packagename", packageName);
+
+                return params;
+            }
+        };
 
 // add it to the RequestQueue
         queue.add(getRequest);

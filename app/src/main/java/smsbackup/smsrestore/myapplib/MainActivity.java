@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         LiveAds.getLiveAds(this, getPackageName());
         TestAds.getTestAds(this);
 
-        InHouseAds.getInHouseAds(this);
+        InHouseAds.getInHouseAds(this, getPackageName());
     }
 
     public void Test(View view) {
