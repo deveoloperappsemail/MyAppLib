@@ -35,11 +35,15 @@ public class InHouseAds {
                         JSONArray jsonArray = new JSONArray(response);
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            modelArrayList.add(new InHouseModel(jsonObject.getString("adstitle"), jsonObject.getString("adssubtext"),
-                                    jsonObject.getString("adsrating"), context.getString(R.string.base_url) + "uploads/" + jsonObject.getString("adsicon")
-                                    , context.getString(R.string.base_url) + "uploads/" + jsonObject.getString("adsimage"),
-                                    context.getString(R.string.base_url) + "uploads/" + jsonObject.getString("adsvideo"),
-                                    jsonObject.getBoolean("isVideo"), jsonObject.getString("packagename")));
+                            modelArrayList.add(new InHouseModel(
+                                    jsonObject.getString("adstitle"),
+                                    jsonObject.getString("adssubtext"),
+                                    jsonObject.getString("adsrating"),
+                                    jsonObject.getString("adsicon"),
+                                    jsonObject.getString("adsimage"),
+                                    jsonObject.getString("adsvideo"),
+                                    jsonObject.getBoolean("isVideo"),
+                                    jsonObject.getString("packagename")));
 
 
                         }
