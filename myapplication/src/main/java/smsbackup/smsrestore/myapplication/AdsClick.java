@@ -50,6 +50,9 @@ public class AdsClick {
             }
         };
 
+        // add it to the RequestQueue
+        queue.add(getRequest);
+
     }
 
 }
