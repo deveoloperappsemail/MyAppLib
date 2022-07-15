@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class AdsClick {
 
-    private static void onAdClick(Context context, String appName, String packageName,
+    public static void onAdClick(Context context, String appName, String packageName,
                                   String adPkgName, String adType) {
         RequestQueue queue = Volley.newRequestQueue(context); // this = context
         StringRequest getRequest = new StringRequest(Request.Method.POST,
