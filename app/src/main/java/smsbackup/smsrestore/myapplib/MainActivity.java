@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Test(View view) {
+        //Just Testing
         Toast.makeText(this, "" + InHouseAds.getModelAdsList().size(), Toast.LENGTH_SHORT).show();
     }
 }
